@@ -57,7 +57,8 @@ function GlobalProvider({children}) {
                 location,
                 setLocation,
                 results,
-                setResults
+                setResults,
+                navigate
             }}
         >
             {loading ? <Loading /> : null}

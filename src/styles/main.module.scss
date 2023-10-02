@@ -84,4 +84,61 @@
 
 .radio_input {
     display: none;
- }
+}
+
+.map_container {
+    height: 100%;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    background: #c4c4c4;
+    position: relative;
+}
+
+.map_results {
+    position: absolute;
+    left: 0;
+    width: 300px;
+    background-color: white;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    //padding: 20px;
+}
+
+.map_actions {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.results_list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.result_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 20px 0;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    &:hover {
+        border-bottom: 1px solid rgb(0, 0, 0);
+    }
+}
+
+.result_label {
+    h4, p {
+        margin: 0;
+    }
+}
+
+.result_rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

@@ -5,7 +5,7 @@ import FormLabel from './formLabel';
 import { RiMapPinLine } from "react-icons/ri";
 
 function EnvironmentInput() {
-  const { form, handleForm, navigate } = useGlobalContext();
+  const { form, handleForm, submitForm, navigate } = useGlobalContext();
   return (
     <section className={styles.page_container}>
       <div className={styles.page_contents}>
@@ -76,7 +76,7 @@ function EnvironmentInput() {
         </button>
         <button
           className={styles.button}
-          onClick={() => navigate("/results")}
+          onClick={submitForm}
         >
           Finish
         </button>

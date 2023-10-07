@@ -1,5 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../../context/globalContext';
+import { motion } from 'framer-motion';
+import { page_transitions } from '../../animations';
 import styles from "../../styles/main.module.scss";
 import FormLabel from './formLabel';
 import { RiMapPinLine } from 'react-icons/ri'
@@ -7,7 +9,7 @@ import { RiMapPinLine } from 'react-icons/ri'
 function DistanceInput() {
   const { form, handleForm, navigate } = useGlobalContext();
   return (
-    <section className={styles.page_container}>
+    <motion.section {...page_transitions} className={styles.page_container}>
       <div className={styles.page_contents}>
         <FormLabel
             icon={<RiMapPinLine size={30}/>}
@@ -42,7 +44,7 @@ function DistanceInput() {
           Next
         </button>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,11 +1,30 @@
+$main: #FF7C03;
+
+* {
+    font-family: "Outfit";
+    box-sizing: border-box;
+}
+
+.app_wrapper {
+    overflow: hidden;
+}
+
 .page_container {
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    background-color: red;
+}
+
+.map_wrapper {
+    flex: 1;
+    background-color: blue;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .page_contents {
@@ -14,96 +33,45 @@
 }
 
 .logo {
-    height: 40px;
-    aspect-ratio: 1;
-    background-color: #c4c4c4;
-    border-radius: 40px;
+    height: 75px;
 }
 
-.page_title {
-    font-size: 50px;
-    margin: 10px 0;
-}
-
-.page_subtitle {
-    font-size: 20px;
-    margin: 0 0 30px 0;
-}
-
-.form_label {
-    font-size: 30px;
-    margin: 5px;
-}
-
-.page_actions {
-    position: absolute;
-    bottom: 10%;
-    display: flex;
-    gap: 15px;
-}
-
-.input_container {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin: 10px 0;
-    font-weight: 700;
-}
-
-.text_input {
-    padding: 10px 15px;
-    width: 400px;
-}
 
 .number_input {
     padding: 10px 15px;
 }
 
 .button {
-    padding: 10px 15px;
-}
-
-.environment_selections {
+    padding: 0 15px;
+    height: 30px;
     display: flex;
     align-items: center;
-    gap: 50px;
-    padding: 20px 0;
-}
-
-.environment_item {
-    height: 200px;
-    aspect-ratio: 1;
+    gap: 10px;
     border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #c4c4c4;
-}
-
-.active_item {
-    border: 1px solid black;
-  }
-
-.radio_input {
-    display: none;
+    font-size: 12px;
+    background-color: $main;
+    color: white;
+    border: none;
+    font-weight: 600;                                                                                                                                         ;
 }
 
 .map_container {
     height: 100%;
-    width: calc(100% - 300px);
-    margin-left: 300px;
-    background: #c4c4c4;
+    width: 100%;
+    background: black;
     position: relative;
 }
 
 .map_results {
     position: absolute;
     left: 0;
-    width: 300px;
+    width: 350px;
     background-color: white;
     height: 100%;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    //padding: 20px;
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,.05);
 }
 
 .map_actions {
@@ -141,4 +109,99 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.form_logo {
+    height: 20px;
+}
+
+.form_container {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    width: 80%;
+    background-color: white;
+    display: flex;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 1px 0px 5px 1px rgba(0,0,0,.05);
+
+}
+.form_input_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    border-right: 1px solid #e7e7e7;
+    &:last-of-type {
+        border: none;
+    }
+    &:first-of-type {
+        flex: 1
+    }
+}
+
+.form_input {
+    height: 30px;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+    &:focus {
+        outline: transparent;
+    }
+}
+
+.form_select {
+    border: none;
+    padding-right: 10px;
+    &:focus {
+        outline: transparent;
+    }
+}
+
+.form_icon {
+    color: #808080;
+}
+
+.button_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    border:none;
+    background-color: white;
+    color: $main;
+
+    &:hover {
+        background-color: #f1f1f1;
+
+    }
+
+    &:hover + .button_label {
+        display: flex;
+    }
+}
+
+.button_label {
+    position: absolute;
+    background-color: white;
+    top: 50px;
+    border-radius: 5px;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    padding: 10px;
+    box-shadow: 1px 0px 5px 1px rgba(0,0,0,.05);
+    white-space: nowrap;
 }

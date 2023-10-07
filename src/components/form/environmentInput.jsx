@@ -1,13 +1,15 @@
 import React from 'react';
 import { useGlobalContext } from '../../context/globalContext';
+import { motion } from 'framer-motion';
+import { page_transitions } from '../../animations';
 import styles from "../../styles/main.module.scss";
 import FormLabel from './formLabel';
 import { RiMapPinLine } from "react-icons/ri";
 
 function EnvironmentInput() {
-  const { form, handleForm, submitForm, navigate } = useGlobalContext();
+  const { form, handleForm, submitForm, navigate, location } = useGlobalContext();
   return (
-    <section className={styles.page_container}>
+    <motion.section {...page_transitions} className={styles.page_container}>
       <div className={styles.page_contents}>
         <FormLabel
             icon={<RiMapPinLine size={30}/>}
@@ -75,13 +77,14 @@ function EnvironmentInput() {
           Back
         </button>
         <button
+          disabled={!location}
           className={styles.button}
           onClick={submitForm}
         >
           Finish
         </button>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

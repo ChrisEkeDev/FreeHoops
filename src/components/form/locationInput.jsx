@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context/globalContext';
-import axios from "axios";
+
+import { motion } from 'framer-motion';
+import { page_transitions } from '../../animations';
 import styles from "../../styles/main.module.scss";
 import FormLabel from './formLabel';
 import { RiMapPinLine } from "react-icons/ri";
@@ -31,7 +33,7 @@ function LocationInput() {
 
 
     return (
-        <section className={styles.page_container}>
+        <motion.section {...page_transitions} className={styles.page_container}>
             <div className={styles.page_contents}>
                 <FormLabel
                     icon={<RiMapPinLine size={30}/>}
@@ -47,7 +49,7 @@ function LocationInput() {
                     />
                     <button
                         className={styles.button}
-                        disabled={location}
+                        //disabled={location}
                         onClick={() => geocodeAddress(form.location)}
                     >
                         Verify Address
@@ -64,14 +66,14 @@ function LocationInput() {
                 </button>
                 <button
                     className={styles.button}
-                    disabled={!location}
+                    //disabled={!location}
                     onClick={() => navigate("/select-distance")}
                 >
                     Next
                 </button>
             </div>
 
-        </section>
+        </motion.section>
     )
 }
 

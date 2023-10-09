@@ -61,10 +61,6 @@ function GlobalProvider({children}) {
         });
   };
 
-  useEffect(() => {
-    console.log(location)
-  }, [location])
-
     const loadPlaces = (results, status) => {
         if (status === window.google.maps.places.PlacesServiceStatus.OK) {
           const resultsArray = [];
@@ -72,7 +68,6 @@ function GlobalProvider({children}) {
             if (place.business_status === "OPERATIONAL") {
               const lat = place.geometry.location.lat();
               const lng = place.geometry.location.lng();
-              console.log(place)
               let newPlace = {
                 id: place.place_id,
                 name: place.name,
@@ -81,7 +76,6 @@ function GlobalProvider({children}) {
                 rating: place.rating,
                 total: place.user_ratings_total
               };
-              console.log(newPlace)
               resultsArray.push(newPlace);
             }
           });

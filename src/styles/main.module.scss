@@ -37,26 +37,21 @@ $text: #4e4e4e;
     width: 100vw;
     display: flex;
     position: relative;
-    background-color: red;
 }
 
 .map_wrapper {
     flex: 1;
-    background-color: blue;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: margin-left 0.2s;
 }
 
 .page_contents {
     width: 1110px;
     margin-bottom: 150px;
-}
-
-.logo {
-    height: 75px;
 }
 
 
@@ -124,7 +119,7 @@ $text: #4e4e4e;
 }
 
 .map_logo {
-    height: 24px;
+    height: 70px;
 }
 
 .map_actions {

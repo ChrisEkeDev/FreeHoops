@@ -1,12 +1,12 @@
 import React from 'react'
 import { TbCurrentLocation, TbCurrentLocationOff, TbMapPin, TbRoad, TbSearch } from "react-icons/tb"
-import IconButton from "./buttons/iconButton";
-import Button from './buttons/button';
-import { useGlobalContext } from '../context/globalContext';
-import styles from "../styles/main.module.scss";
+import IconButton from "../buttons/iconButton";
+import Button from '../buttons/button';
+import { useGlobalContext } from '../../context/globalContext';
+import styles from "../../styles/main.module.scss";
 
 function Form() {
-    const { address, setAddress, distance, setDistance, currentLocation, setCurrentLocation } = useGlobalContext();
+    const { address, setAddress, distance, setDistance, currentLocation, setCurrentLocation, geocodeAddress } = useGlobalContext();
 
     return (
         <div className={styles.form_container}>
@@ -28,7 +28,7 @@ function Form() {
                 <TbRoad className={styles.form_icon}/>
                 <select
                     defaultValue={distance}
-                    onChange={() => setDistance(x.target.value)}
+                    onChange={(x) => setDistance(x.target.value)}
                     className={styles.form_select}
                 >
                     <option value={5}>5 miles</option>
@@ -41,7 +41,7 @@ function Form() {
             </div>
             <div className={styles.form_input_container}>
                 <Button
-                    action={() => console.log("search backcourts")}
+                    action={geocodeAddress}
                     label="Search BackCourts"
                 />
             </div>

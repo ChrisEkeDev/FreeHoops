@@ -4,7 +4,7 @@ import styles from "../../styles/main.module.scss";
 import ResultItem from './resultItem'
 
 function ResultsList() {
-  const{ results } = useGlobalContext();
+  const { results } = useGlobalContext()
 
   return (
     <ul className={styles.results_list}>
